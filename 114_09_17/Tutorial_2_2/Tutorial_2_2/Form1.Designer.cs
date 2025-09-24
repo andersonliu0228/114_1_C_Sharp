@@ -34,7 +34,7 @@
             // messageButton
             // 
             this.messageButton.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.messageButton.Location = new System.Drawing.Point(41, 108);
+            this.messageButton.Location = new System.Drawing.Point(197, 135);
             this.messageButton.Name = "messageButton";
             this.messageButton.Size = new System.Drawing.Size(161, 71);
             this.messageButton.TabIndex = 0;

@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{DB0DABF6-CBF4-4595-9D72-47E69FD5B41D}|Tutorial_2_2\\Tutorial_2_2.csproj|solutionrelative:tutorial_2_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB0DABF6-CBF4-4595-9D72-47E69FD5B41D}|Tutorial_2_2\\Tutorial_2_2.csproj|c:\\users\\m303\\desktop\\114_1\\114_1_c_sharp\\114_09_17\\tutorial_2_2\\tutorial_2_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DB0DABF6-CBF4-4595-9D72-47E69FD5B41D}|Tutorial_2_2\\Tutorial_2_2.csproj|C:\\Users\\m303\\Desktop\\114_1\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\tutorial_2_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DB0DABF6-CBF4-4595-9D72-47E69FD5B41D}|Tutorial_2_2\\Tutorial_2_2.csproj|solutionrelative:tutorial_2_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -42,8 +42,7 @@
               "ToolTip": "C:\\Users\\m303\\Desktop\\114_1\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\Tutorial_2_2\\Form1.cs [\u8A2D\u8A08]",
               "RelativeToolTip": "Tutorial_2_2\\Form1.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T04:21:31.64Z",
-              "EditorCaption": " [\u8A2D\u8A08]"
+              "WhenOpened": "2025-09-17T04:21:31.64Z"
             }
           ]
         }
