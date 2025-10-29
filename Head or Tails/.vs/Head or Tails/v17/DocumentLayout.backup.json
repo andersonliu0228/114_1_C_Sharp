@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\Head or Tails\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EE43F9-56BF-4DD9-81DB-CB011DEEA5C0}|Head or Tails\\Head or Tails.csproj|c:\\users\\m303\\desktop\\114_1_c_sharp\\head or tails\\head or tails\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2EE43F9-56BF-4DD9-81DB-CB011DEEA5C0}|Head or Tails\\Head or Tails.csproj|solutionrelative:head or tails\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\Head or Tails\\Head or Tails\\Form1.cs",
+              "RelativeDocumentMoniker": "Head or Tails\\Form1.cs",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\Head or Tails\\Head or Tails\\Form1.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "Head or Tails\\Form1.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T04:55:01.925Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
