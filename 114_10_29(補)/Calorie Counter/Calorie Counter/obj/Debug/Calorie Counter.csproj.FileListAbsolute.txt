@@ -1,0 +1,11 @@
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\bin\Debug\Calorie Counter.exe.config
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\bin\Debug\Calorie Counter.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\bin\Debug\Calorie Counter.pdb
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\obj\Debug\Calorie Counter.csproj.AssemblyReference.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\obj\Debug\Calorie_Counter.Form1.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\obj\Debug\Calorie_Counter.Properties.Resources.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\obj\Debug\Calorie Counter.csproj.GenerateResource.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\obj\Debug\Calorie Counter.csproj.CoreCompileInputs.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\obj\Debug\Calorie Counter.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\obj\Debug\Calorie Counter.pdb
+C:\Users\m303\Desktop\114_1_C_Sharp\114_10_29(補)\Calorie Counter\Calorie Counter\obj\Debug\Calorie Counter.exe.config

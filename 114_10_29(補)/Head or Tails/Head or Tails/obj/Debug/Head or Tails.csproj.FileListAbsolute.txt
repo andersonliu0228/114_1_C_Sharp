@@ -1,0 +1,11 @@
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\bin\Debug\Head or Tails.exe.config
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\bin\Debug\Head or Tails.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\bin\Debug\Head or Tails.pdb
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\obj\Debug\Head or Tails.csproj.AssemblyReference.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\obj\Debug\Head_or_Tails.Form1.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\obj\Debug\Head_or_Tails.Properties.Resources.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\obj\Debug\Head or Tails.csproj.GenerateResource.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\obj\Debug\Head or Tails.csproj.CoreCompileInputs.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\obj\Debug\Head or Tails.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\obj\Debug\Head or Tails.pdb
+C:\Users\m303\Desktop\114_1_C_Sharp\Head or Tails\Head or Tails\obj\Debug\Head or Tails.exe.config

@@ -1,0 +1,11 @@
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\bin\Debug\Income Tax Calculation.exe.config
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\bin\Debug\Income Tax Calculation.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\bin\Debug\Income Tax Calculation.pdb
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\obj\Debug\Income Tax Calculation.csproj.AssemblyReference.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\obj\Debug\Income_Tax_Calculation.Form1.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\obj\Debug\Income_Tax_Calculation.Properties.Resources.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\obj\Debug\Income Tax Calculation.csproj.GenerateResource.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\obj\Debug\Income Tax Calculation.csproj.CoreCompileInputs.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\obj\Debug\Income Tax Calculation.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\obj\Debug\Income Tax Calculation.pdb
+C:\Users\m303\Desktop\114_1_C_Sharp\Income Tax Calculation\Income Tax Calculation\obj\Debug\Income Tax Calculation.exe.config
