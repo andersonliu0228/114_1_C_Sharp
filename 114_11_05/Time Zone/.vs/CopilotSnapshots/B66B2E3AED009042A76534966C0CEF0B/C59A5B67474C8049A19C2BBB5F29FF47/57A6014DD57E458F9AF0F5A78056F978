@@ -1,0 +1,149 @@
+﻿namespace Time_Zone
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// 初始化元件的方法。此方法由設計工具自動產生，請勿手動修改其中的程式碼內容。
+        /// 以下以繁體中文加入詳細註解，並將元件文字改為繁體中文，將表單字型大小設為 18。
+        /// 注意：為保持原有邏輯，僅變更 Text 屬性與字型相關設定，其他程式碼不做修改。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            // 宣告元件控制項
+            this.promptLabel = new System.Windows.Forms.Label();
+            this.cityListBox = new System.Windows.Forms.ListBox();
+            this.outputDescriptionLabel = new System.Windows.Forms.Label();
+            this.timeZoneLabel = new System.Windows.Forms.Label();
+            this.okButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+
+            // 
+            // promptLabel
+            // 
+            // promptLabel 是顯示提示文字的 Label，提醒使用者選擇城市。
+            // 將提示文字改為繁體中文，並讓它繼承表單字型（後面整體設定為 18pt）。
+            this.promptLabel.AutoSize = true;
+            this.promptLabel.Location = new System.Drawing.Point(5, 9);
+            this.promptLabel.Name = "promptLabel";
+            this.promptLabel.Size = new System.Drawing.Size(221, 13);
+            this.promptLabel.TabIndex = 0;
+            this.promptLabel.Text = "請選擇一個城市，我會告訴您其時區。"; // 已改為繁體中文
+
+            // 
+            // cityListBox
+            // 
+            // cityListBox 為城市列表，原本包含英文城市名稱，這裡將其改為繁體中文城市名稱。
+            this.cityListBox.FormattingEnabled = true;
+            this.cityListBox.Items.AddRange(new object[] {
+            "丹佛",
+            "檀香山",
+            "明尼阿波利斯",
+            "紐約",
+            "舊金山"}); // 城市名稱已轉為繁體中文
+            this.cityListBox.Location = new System.Drawing.Point(55, 31);
+            this.cityListBox.Name = "cityListBox";
+            this.cityListBox.Size = new System.Drawing.Size(120, 69);
+            this.cityListBox.TabIndex = 1;
+
+            // 
+            // outputDescriptionLabel
+            // 
+            // outputDescriptionLabel 為時間區塊的描述文字，將其改為繁體中文「時區：」。
+            this.outputDescriptionLabel.AutoSize = true;
+            this.outputDescriptionLabel.Location = new System.Drawing.Point(32, 113);
+            this.outputDescriptionLabel.Name = "outputDescriptionLabel";
+            this.outputDescriptionLabel.Size = new System.Drawing.Size(61, 13);
+            this.outputDescriptionLabel.TabIndex = 2;
+            this.outputDescriptionLabel.Text = "時區："; // 已改為繁體中文
+
+            // 
+            // timeZoneLabel
+            // 
+            // timeZoneLabel 為顯示時區結果的 Label，預設為空白，維持原本的邊框與置中設定。
+            this.timeZoneLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timeZoneLabel.Location = new System.Drawing.Point(99, 108);
+            this.timeZoneLabel.Name = "timeZoneLabel";
+            this.timeZoneLabel.Size = new System.Drawing.Size(100, 23);
+            this.timeZoneLabel.TabIndex = 3;
+            this.timeZoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+            // 
+            // okButton
+            // 
+            // okButton 為確認按鈕，將顯示文字改為繁體中文「確定」。
+            this.okButton.Location = new System.Drawing.Point(37, 150);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.TabIndex = 4;
+            this.okButton.Text = "確定"; // 已改為繁體中文
+            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+
+            // 
+            // exitButton
+            // 
+            // exitButton 為關閉表單的按鈕，將其文字改為繁體中文「離開」。
+            this.exitButton.Location = new System.Drawing.Point(118, 150);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 5;
+            this.exitButton.Text = "離開"; // 已改為繁體中文
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+
+            // 
+            // Form1
+            // 
+            // 表單的主要設定。
+            // 將表單標題改為繁體中文，並設定整體字型為 18pt，讓所有元件繼承此字型大小。
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(230, 189);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.timeZoneLabel);
+            this.Controls.Add(this.outputDescriptionLabel);
+            this.Controls.Add(this.cityListBox);
+            this.Controls.Add(this.promptLabel);
+            this.Name = "Form1";
+            this.Text = "時區查詢"; // 已改為繁體中文
+            // 設定表單與控制項的字型為 18pt（使用 Microsoft Sans Serif 作為預設字型），
+            // 讓現有所有控制項繼承此字型大小。如需為單一控制項微調字型，可在該控制項上額外指定。
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label promptLabel;
+        private System.Windows.Forms.ListBox cityListBox;
+        private System.Windows.Forms.Label outputDescriptionLabel;
+        private System.Windows.Forms.Label timeZoneLabel;
+        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.Button exitButton;
+    }
+}
+
