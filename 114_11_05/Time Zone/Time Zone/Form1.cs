@@ -20,7 +20,7 @@ namespace Time_Zone
         private void okButton_Click(object sender, EventArgs e)
         {
             string city;
-            if (cityListBox.SelectedIndex != -1)
+            if (cityListBox.SelectedIndex != -1)//檢查是否選了項目
             {
                 city = cityListBox.SelectedItem.ToString();
                 switch(city)
