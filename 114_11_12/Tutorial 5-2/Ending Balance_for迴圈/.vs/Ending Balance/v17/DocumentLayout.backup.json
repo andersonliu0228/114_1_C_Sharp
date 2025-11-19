@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_11_12\\Tutorial 5-2\\Ending Balance_for\u8FF4\u5708\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE3FCE43-183A-4464-B2F1-5EBCEE4484E3}|Ending Balance\\Ending Balance.csproj|C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_11_12\\Tutorial 5-2\\Ending Balance_for\u8FF4\u5708\\ending balance\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CE3FCE43-183A-4464-B2F1-5EBCEE4484E3}|Ending Balance\\Ending Balance.csproj|c:\\users\\m303\\desktop\\114_1_c_sharp\\114_11_12\\tutorial 5-2\\ending balance_for\u8FF4\u5708\\ending balance\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE3FCE43-183A-4464-B2F1-5EBCEE4484E3}|Ending Balance\\Ending Balance.csproj|solutionrelative:ending balance\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE3FCE43-183A-4464-B2F1-5EBCEE4484E3}|Ending Balance\\Ending Balance.csproj|c:\\users\\m303\\desktop\\114_1_c_sharp\\114_11_12\\tutorial 5-2\\ending balance_for\u8FF4\u5708\\ending balance\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CE3FCE43-183A-4464-B2F1-5EBCEE4484E3}|Ending Balance\\Ending Balance.csproj|C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_11_12\\Tutorial 5-2\\Ending Balance_for\u8FF4\u5708\\ending balance\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CE3FCE43-183A-4464-B2F1-5EBCEE4484E3}|Ending Balance\\Ending Balance.csproj|solutionrelative:ending balance\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -22,8 +22,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -34,8 +38,7 @@
               "RelativeToolTip": "Ending Balance\\Form1.Designer.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAgwEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T06:27:09.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T06:27:09.949Z"
             },
             {
               "$type": "Document",
@@ -43,9 +46,9 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_11_12\\Tutorial 5-2\\Ending Balance_for\u8FF4\u5708\\Ending Balance\\Form1.cs",
               "RelativeDocumentMoniker": "Ending Balance\\Form1.cs",
-              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_11_12\\Tutorial 5-2\\Ending Balance_for\u8FF4\u5708\\Ending Balance\\Form1.cs",
-              "RelativeToolTip": "Ending Balance\\Form1.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAYwB0AAAAoAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_11_12\\Tutorial 5-2\\Ending Balance_for\u8FF4\u5708\\Ending Balance\\Form1.cs*",
+              "RelativeToolTip": "Ending Balance\\Form1.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvx0AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T06:24:42.673Z",
               "EditorCaption": ""
@@ -59,8 +62,7 @@
               "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_11_12\\Tutorial 5-2\\Ending Balance_for\u8FF4\u5708\\Ending Balance\\Form1.cs [\u8A2D\u8A08]",
               "RelativeToolTip": "Ending Balance\\Form1.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T06:24:37.358Z",
-              "EditorCaption": " [\u8A2D\u8A08]"
+              "WhenOpened": "2024-11-26T06:24:37.358Z"
             }
           ]
         }
