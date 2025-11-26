@@ -50,3 +50,14 @@ C:\Users\m303\Desktop\114_1_C_Sharp_Tutorial-main\Chapter 05\Tutorial 5-7\Total 
 C:\Users\m303\Desktop\114_1_C_Sharp_Tutorial-main\Chapter 05\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total Sales.exe
 C:\Users\m303\Desktop\114_1_C_Sharp_Tutorial-main\Chapter 05\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total Sales.pdb
 C:\Users\m303\Desktop\114_1_C_Sharp_Tutorial-main\Chapter 05\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total Sales.exe.config
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\bin\Debug\Total Sales.exe.config
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\bin\Debug\Total Sales.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\bin\Debug\Total Sales.pdb
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total Sales.csproj.AssemblyReference.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total Sales.exe.config
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total_Sales.Form1.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total_Sales.Properties.Resources.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total Sales.csproj.GenerateResource.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total Sales.csproj.CoreCompileInputs.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total Sales.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\114_11_19\Tutorial 5-7\Total Sales\Total Sales\obj\x86\Debug\Total Sales.pdb
