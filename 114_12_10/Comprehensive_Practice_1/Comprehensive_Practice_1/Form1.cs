@@ -42,8 +42,8 @@ namespace Comprehensive_Practice_1
         }
         private void showResult(string surname, string givenName, int quiz1, int quiz2, int quiz3)
         {
-            int maxScore = 0;
-            findHighestScore(quiz1, quiz2, quiz3, ref maxScore);
+            int maxScore;
+            findHighestScore(quiz1, quiz2, quiz3, out maxScore);
             quiz2 = 200;
             labelResult.Text = string.Format("{0}{1}的最高成績是{2}分", givenName, surname, maxScore);
             //MessageBox.Show(string.Format("Quiz2 = {0}", quiz2));
@@ -55,7 +55,7 @@ namespace Comprehensive_Practice_1
             textBoxQuiz3.Clear();
             textBoxFirstName.Focus();
         }
-        private void findHighestScore(int quiz1, int quiz2, int quiz3, ref int maxScore)
+        private void findHighestScore(int quiz1, int quiz2, int quiz3, out int maxScore)
         { 
             if (quiz1 >= quiz2 && quiz1 >= quiz3)
             {
