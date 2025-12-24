@@ -1,0 +1,187 @@
+﻿namespace Q3
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblNumber1 = new System.Windows.Forms.Label();
+            this.lblNumber2 = new System.Windows.Forms.Label();
+            this.lblNumber3 = new System.Windows.Forms.Label();
+            this.lblNumber4 = new System.Windows.Forms.Label();
+            this.lblNumber5 = new System.Windows.Forms.Label();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnDraw = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.listBoxDrawNumbers = new System.Windows.Forms.ListBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblNumber1
+            // 
+            this.lblNumber1.BackColor = System.Drawing.Color.White;
+            this.lblNumber1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber1.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold);
+            this.lblNumber1.Location = new System.Drawing.Point(43, 50);
+            this.lblNumber1.Name = "lblNumber1";
+            this.lblNumber1.Size = new System.Drawing.Size(60, 45);
+            this.lblNumber1.TabIndex = 0;
+            this.lblNumber1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNumber2
+            // 
+            this.lblNumber2.BackColor = System.Drawing.Color.White;
+            this.lblNumber2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold);
+            this.lblNumber2.Location = new System.Drawing.Point(143, 50);
+            this.lblNumber2.Name = "lblNumber2";
+            this.lblNumber2.Size = new System.Drawing.Size(60, 45);
+            this.lblNumber2.TabIndex = 1;
+            this.lblNumber2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNumber3
+            // 
+            this.lblNumber3.BackColor = System.Drawing.Color.White;
+            this.lblNumber3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber3.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold);
+            this.lblNumber3.Location = new System.Drawing.Point(243, 50);
+            this.lblNumber3.Name = "lblNumber3";
+            this.lblNumber3.Size = new System.Drawing.Size(60, 45);
+            this.lblNumber3.TabIndex = 2;
+            this.lblNumber3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNumber4
+            // 
+            this.lblNumber4.BackColor = System.Drawing.Color.White;
+            this.lblNumber4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber4.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold);
+            this.lblNumber4.Location = new System.Drawing.Point(343, 50);
+            this.lblNumber4.Name = "lblNumber4";
+            this.lblNumber4.Size = new System.Drawing.Size(60, 45);
+            this.lblNumber4.TabIndex = 3;
+            this.lblNumber4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNumber5
+            // 
+            this.lblNumber5.BackColor = System.Drawing.Color.White;
+            this.lblNumber5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber5.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold);
+            this.lblNumber5.Location = new System.Drawing.Point(443, 50);
+            this.lblNumber5.Name = "lblNumber5";
+            this.lblNumber5.Size = new System.Drawing.Size(60, 45);
+            this.lblNumber5.TabIndex = 4;
+            this.lblNumber5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.btnGenerate.Location = new System.Drawing.Point(43, 110);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(140, 42);
+            this.btnGenerate.TabIndex = 5;
+            this.btnGenerate.Text = "產生號碼";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // btnDraw
+            // 
+            this.btnDraw.Enabled = false;
+            this.btnDraw.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.btnDraw.Location = new System.Drawing.Point(203, 110);
+            this.btnDraw.Name = "btnDraw";
+            this.btnDraw.Size = new System.Drawing.Size(140, 42);
+            this.btnDraw.TabIndex = 6;
+            this.btnDraw.Text = "開獎號碼";
+            this.btnDraw.UseVisualStyleBackColor = true;
+            this.btnDraw.Click += new System.EventHandler(this.btnDraw_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.btnExit.Location = new System.Drawing.Point(363, 110);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(140, 42);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "離開";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // listBoxDrawNumbers
+            // 
+            this.listBoxDrawNumbers.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.listBoxDrawNumbers.FormattingEnabled = true;
+            this.listBoxDrawNumbers.ItemHeight = 30;
+            this.listBoxDrawNumbers.Location = new System.Drawing.Point(132, 281);
+            this.listBoxDrawNumbers.Name = "listBoxDrawNumbers";
+            this.listBoxDrawNumbers.Size = new System.Drawing.Size(460, 124);
+            this.listBoxDrawNumbers.TabIndex = 8;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.lblTitle.Location = new System.Drawing.Point(43, 168);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(0, 30);
+            this.lblTitle.TabIndex = 9;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(735, 454);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.listBoxDrawNumbers);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnDraw);
+            this.Controls.Add(this.btnGenerate);
+            this.Controls.Add(this.lblNumber5);
+            this.Controls.Add(this.lblNumber4);
+            this.Controls.Add(this.lblNumber3);
+            this.Controls.Add(this.lblNumber2);
+            this.Controls.Add(this.lblNumber1);
+            this.Name = "Form1";
+            this.Text = "樂透號碼產生器";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblNumber1;
+        private System.Windows.Forms.Label lblNumber2;
+        private System.Windows.Forms.Label lblNumber3;
+        private System.Windows.Forms.Label lblNumber4;
+        private System.Windows.Forms.Label lblNumber5;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnDraw;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ListBox listBoxDrawNumbers;
+        private System.Windows.Forms.Label lblTitle;
+    }
+}
+

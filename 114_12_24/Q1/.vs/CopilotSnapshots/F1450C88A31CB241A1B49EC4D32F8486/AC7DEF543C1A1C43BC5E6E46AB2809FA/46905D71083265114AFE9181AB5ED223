@@ -1,0 +1,179 @@
+﻿namespace Q1
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.lblComputer = new System.Windows.Forms.Label();
+            this.lblPlayer = new System.Windows.Forms.Label();
+            this.txtResult = new System.Windows.Forms.TextBox();
+            this.btnRock = new System.Windows.Forms.Button();
+            this.btnPaper = new System.Windows.Forms.Button();
+            this.btnScissors = new System.Windows.Forms.Button();
+            this.btnEndGame = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // lblComputer
+            // 
+            this.lblComputer.AutoSize = true;
+            this.lblComputer.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblComputer.Location = new System.Drawing.Point(180, 90);
+            this.lblComputer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblComputer.Name = "lblComputer";
+            this.lblComputer.Size = new System.Drawing.Size(113, 40);
+            this.lblComputer.TabIndex = 0;
+            this.lblComputer.Text = "電腦出";
+            // 
+            // lblPlayer
+            // 
+            this.lblPlayer.AutoSize = true;
+            this.lblPlayer.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPlayer.Location = new System.Drawing.Point(510, 90);
+            this.lblPlayer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlayer.Name = "lblPlayer";
+            this.lblPlayer.Size = new System.Drawing.Size(113, 40);
+            this.lblPlayer.TabIndex = 1;
+            this.lblPlayer.Text = "玩家出";
+            // 
+            // txtResult
+            // 
+            this.txtResult.Font = new System.Drawing.Font("微軟正黑體", 18F);
+            this.txtResult.Location = new System.Drawing.Point(216, 345);
+            this.txtResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtResult.Name = "txtResult";
+            this.txtResult.ReadOnly = true;
+            this.txtResult.Size = new System.Drawing.Size(341, 55);
+            this.txtResult.TabIndex = 2;
+            this.txtResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnRock
+            // 
+            this.btnRock.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRock.Location = new System.Drawing.Point(75, 420);
+            this.btnRock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRock.Name = "btnRock";
+            this.btnRock.Size = new System.Drawing.Size(180, 75);
+            this.btnRock.TabIndex = 3;
+            this.btnRock.Text = "石頭";
+            this.btnRock.UseVisualStyleBackColor = true;
+            // 
+            // btnPaper
+            // 
+            this.btnPaper.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPaper.Location = new System.Drawing.Point(302, 420);
+            this.btnPaper.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPaper.Name = "btnPaper";
+            this.btnPaper.Size = new System.Drawing.Size(180, 75);
+            this.btnPaper.TabIndex = 4;
+            this.btnPaper.Text = "布";
+            this.btnPaper.UseVisualStyleBackColor = true;
+            // 
+            // btnScissors
+            // 
+            this.btnScissors.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnScissors.Location = new System.Drawing.Point(525, 420);
+            this.btnScissors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnScissors.Name = "btnScissors";
+            this.btnScissors.Size = new System.Drawing.Size(180, 75);
+            this.btnScissors.TabIndex = 5;
+            this.btnScissors.Text = "剪刀";
+            this.btnScissors.UseVisualStyleBackColor = true;
+            // 
+            // btnEndGame
+            // 
+            this.btnEndGame.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnEndGame.Location = new System.Drawing.Point(255, 525);
+            this.btnEndGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEndGame.Name = "btnEndGame";
+            this.btnEndGame.Size = new System.Drawing.Size(270, 75);
+            this.btnEndGame.TabIndex = 6;
+            this.btnEndGame.Text = "結束遊戲";
+            this.btnEndGame.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(131, 160);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 151);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(477, 160);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(200, 151);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(801, 692);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnEndGame);
+            this.Controls.Add(this.btnScissors);
+            this.Controls.Add(this.btnPaper);
+            this.Controls.Add(this.btnRock);
+            this.Controls.Add(this.txtResult);
+            this.Controls.Add(this.lblPlayer);
+            this.Controls.Add(this.lblComputer);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblComputer;
+        private System.Windows.Forms.Label lblPlayer;
+        private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.Button btnRock;
+        private System.Windows.Forms.Button btnPaper;
+        private System.Windows.Forms.Button btnScissors;
+        private System.Windows.Forms.Button btnEndGame;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+    }
+}
+

@@ -1,0 +1,170 @@
+﻿namespace Q3
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.txtNumber1 = new System.Windows.Forms.TextBox();
+            this.txtNumber2 = new System.Windows.Forms.TextBox();
+            this.txtNumber3 = new System.Windows.Forms.TextBox();
+            this.txtNumber4 = new System.Windows.Forms.TextBox();
+            this.txtNumber5 = new System.Windows.Forms.TextBox();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnDraw = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.txtHistory = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // txtNumber1
+            // 
+            this.txtNumber1.Font = new System.Drawing.Font("Microsoft JhengHei", 14F);
+            this.txtNumber1.Location = new System.Drawing.Point(43, 50);
+            this.txtNumber1.Name = "txtNumber1";
+            this.txtNumber1.ReadOnly = true;
+            this.txtNumber1.Size = new System.Drawing.Size(60, 45);
+            this.txtNumber1.TabIndex = 0;
+            this.txtNumber1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNumber2
+            // 
+            this.txtNumber2.Font = new System.Drawing.Font("Microsoft JhengHei", 14F);
+            this.txtNumber2.Location = new System.Drawing.Point(143, 50);
+            this.txtNumber2.Name = "txtNumber2";
+            this.txtNumber2.ReadOnly = true;
+            this.txtNumber2.Size = new System.Drawing.Size(60, 45);
+            this.txtNumber2.TabIndex = 1;
+            this.txtNumber2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNumber3
+            // 
+            this.txtNumber3.Font = new System.Drawing.Font("Microsoft JhengHei", 14F);
+            this.txtNumber3.Location = new System.Drawing.Point(243, 50);
+            this.txtNumber3.Name = "txtNumber3";
+            this.txtNumber3.ReadOnly = true;
+            this.txtNumber3.Size = new System.Drawing.Size(60, 45);
+            this.txtNumber3.TabIndex = 2;
+            this.txtNumber3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNumber4
+            // 
+            this.txtNumber4.Font = new System.Drawing.Font("Microsoft JhengHei", 14F);
+            this.txtNumber4.Location = new System.Drawing.Point(343, 50);
+            this.txtNumber4.Name = "txtNumber4";
+            this.txtNumber4.ReadOnly = true;
+            this.txtNumber4.Size = new System.Drawing.Size(60, 45);
+            this.txtNumber4.TabIndex = 3;
+            this.txtNumber4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNumber5
+            // 
+            this.txtNumber5.Font = new System.Drawing.Font("Microsoft JhengHei", 14F);
+            this.txtNumber5.Location = new System.Drawing.Point(443, 50);
+            this.txtNumber5.Name = "txtNumber5";
+            this.txtNumber5.ReadOnly = true;
+            this.txtNumber5.Size = new System.Drawing.Size(60, 45);
+            this.txtNumber5.TabIndex = 4;
+            this.txtNumber5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Font = new System.Drawing.Font("Microsoft JhengHei", 14F);
+            this.btnGenerate.Location = new System.Drawing.Point(43, 110);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(140, 42);
+            this.btnGenerate.TabIndex = 5;
+            this.btnGenerate.Text = "產生號碼";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // btnDraw
+            // 
+            this.btnDraw.Font = new System.Drawing.Font("Microsoft JhengHei", 14F);
+            this.btnDraw.Location = new System.Drawing.Point(203, 110);
+            this.btnDraw.Name = "btnDraw";
+            this.btnDraw.Size = new System.Drawing.Size(140, 42);
+            this.btnDraw.TabIndex = 6;
+            this.btnDraw.Text = "開獎號碼";
+            this.btnDraw.UseVisualStyleBackColor = true;
+            this.btnDraw.Click += new System.EventHandler(this.btnDraw_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Microsoft JhengHei", 14F);
+            this.btnExit.Location = new System.Drawing.Point(363, 110);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(140, 42);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "離開";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // txtHistory
+            // 
+            this.txtHistory.Font = new System.Drawing.Font("Microsoft JhengHei", 12F);
+            this.txtHistory.Location = new System.Drawing.Point(43, 168);
+            this.txtHistory.Multiline = true;
+            this.txtHistory.Name = "txtHistory";
+            this.txtHistory.ReadOnly = true;
+            this.txtHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtHistory.Size = new System.Drawing.Size(300, 120);
+            this.txtHistory.TabIndex = 8;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(550, 315);
+            this.Controls.Add(this.txtHistory);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnDraw);
+            this.Controls.Add(this.btnGenerate);
+            this.Controls.Add(this.txtNumber5);
+            this.Controls.Add(this.txtNumber4);
+            this.Controls.Add(this.txtNumber3);
+            this.Controls.Add(this.txtNumber2);
+            this.Controls.Add(this.txtNumber1);
+            this.Name = "Form1";
+            this.Text = "樂透號碼產生器";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox txtNumber1;
+        private System.Windows.Forms.TextBox txtNumber2;
+        private System.Windows.Forms.TextBox txtNumber3;
+        private System.Windows.Forms.TextBox txtNumber4;
+        private System.Windows.Forms.TextBox txtNumber5;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnDraw;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox txtHistory;
+    }
+}
+

@@ -1,0 +1,411 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace Q2
+{
+    public partial class Form1 : Form
+    {
+        // 常數定義 - 每小時工資費率
+        private const decimal LABOR_RATE_PER_HOUR = 600m;
+        private const decimal TAX_RATE = 0.06m;
+
+        // 服務費用常數
+        private const decimal OIL_CHANGE_PRICE = 780m;
+        private const decimal LUBE_JOB_PRICE = 540m;
+        private const decimal RADIATOR_FLUSH_PRICE = 900m;
+        private const decimal TRANSMISSION_FLUSH_PRICE = 2400m;
+        private const decimal INSPECTION_PRICE = 450m;
+        private const decimal MUFFLER_REPLACEMENT_PRICE = 3000m;
+        private const decimal TIRE_ROTATION_PRICE = 600m;
+
+        public Form1()
+        {
+            InitializeComponent();
+            
+            // 註冊事件處理器
+            this.btnCalculate.Click += new EventHandler(calculateButton_Click);
+            this.btnClear.Click += new EventHandler(clearButton_Click);
+            this.btnExit.Click += new EventHandler(exitButton_Click);
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+        }
+
+        #region 費用計算方法
+
+        /// <summary>
+        /// 計算機油和潤滑服務費用
+        /// </summary>
+        private decimal OilLubeCharges()
+        {
+            decimal charges = 0m;
+
+            if (chkOilChange.Checked)
+                charges += OIL_CHANGE_PRICE;
+
+            if (chkLubeJob.Checked)
+                charges += LUBE_JOB_PRICE;
+
+            return charges;
+        }
+
+        /// <summary>
+        /// 計算清洗服務費用
+        /// </summary>
+        private decimal FlushCharges()
+        {
+            decimal charges = 0m;
+
+            if (chkRadiatorFlush.Checked)
+                charges += RADIATOR_FLUSH_PRICE;
+
+            if (chkTransmissionFlush.Checked)
+                charges += TRANSMISSION_FLUSH_PRICE;
+
+            return charges;
+        }
+
+        /// <summary>
+        /// 計算其他服務費用
+        /// </summary>
+        private decimal MiscCharges()
+        {
+            decimal charges = 0m;
+
+            if (chkInspection.Checked)
+                charges += INSPECTION_PRICE;
+
+            if (chkMufflerReplacement.Checked)
+                charges += MUFFLER_REPLACEMENT_PRICE;
+
+            if (chkTireRotation.Checked)
+                charges += TIRE_ROTATION_PRICE;
+
+            return charges;
+        }
+
+        /// <summary>
+        /// 計算零件和工時費用
+        /// </summary>
+        private decimal OtherCharges()
+        {
+            decimal charges = 0m;
+
+            // 解析零件費用
+            decimal parts = 0m;
+            if (decimal.TryParse(txtParts.Text, out parts))
+            {
+                charges += parts;
+            }
+
+            // 解析工時數並計算工資
+            decimal laborHours = 0m;
+            if (decimal.TryParse(txtLabor.Text, out laborHours))
+            {
+                charges += laborHours * LABOR_RATE_PER_HOUR;
+            }
+
+            return charges;
+        }
+
+        /// <summary>
+        /// 計算稅金（零件6%稅率）
+        /// </summary>
+        private decimal TaxCharges()
+        {
+            decimal tax = 0m;
+
+            // 只對零件收取稅金
+            decimal parts = 0m;
+            if (decimal.TryParse(txtParts.Text, out parts))
+            {
+                tax = parts * TAX_RATE;
+            }
+
+            return tax;
+        }
+
+        /// <summary>
+        /// 計算所有費用總和
+        /// </summary>
+        private decimal TotalCharges()
+        {
+            decimal total = 0m;
+
+            // 服務與工資總額
+            decimal serviceAndLabor = OilLubeCharges() + FlushCharges() + MiscCharges();
+            
+            // 零件費用
+            decimal parts = 0m;
+            decimal.TryParse(txtParts.Text, out parts);
+            
+            // 工時費用
+            decimal laborHours = 0m;
+            decimal laborCost = 0m;
+            if (decimal.TryParse(txtLabor.Text, out laborHours))
+            {
+                laborCost = laborHours * LABOR_RATE_PER_HOUR;
+            }
+
+            // 稅金
+            decimal tax = TaxCharges();
+
+            // 總費用 = 服務費用 + 工時費用 + 零件費用 + 稅金
+            total = serviceAndLabor + laborCost + parts + tax;
+
+            return total;
+        }
+
+        #endregion
+
+        #region 事件處理方法
+
+        /// <summary>
+        /// 計算總額按鈕點擊事件
+        /// </summary>
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 計算服務與工資總額（包含所有服務和工時）
+                decimal serviceCharges = OilLubeCharges() + FlushCharges() + MiscCharges();
+                decimal laborHours = 0m;
+                decimal laborCost = 0m;
+                if (decimal.TryParse(txtLabor.Text, out laborHours))
+                {
+                    laborCost = laborHours * LABOR_RATE_PER_HOUR;
+                }
+                decimal serviceLaborTotal = serviceCharges + laborCost;
+
+                // 計算零件費用
+                decimal parts = 0m;
+                decimal.TryParse(txtParts.Text, out parts);
+
+                // 計算稅金
+                decimal tax = TaxCharges();
+
+                // 計算總費用
+                decimal total = TotalCharges();
+
+                // 顯示結果（格式化為貨幣）
+                txtServiceLabor.Text = serviceLaborTotal.ToString("C0");
+                txtTaxOnParts.Text = parts.ToString("C0");
+                txtTax.Text = tax.ToString("C0");
+                txtTotalFees.Text = total.ToString("C0");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("計算時發生錯誤：" + ex.Message, "錯誤", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// 清除按鈕點擊事件
+        /// </summary>
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            // 清除所有選項和輸入
+            ClearOilLube();
+            ClearFlushes();
+            ClearMisc();
+            ClearOther();
+            ClearFees();
+        }
+
+        /// <summary>
+        /// 離開按鈕點擊事件
+        /// </summary>
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 關閉表單
+            this.Close();
+        }
+
+        /// <summary>
+        /// 表單關閉事件
+        /// </summary>
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // 詢問使用者是否要儲存明細
+            DialogResult result = MessageBox.Show(
+                "是否要將維修明細儲存為文字檔案？",
+                "儲存明細",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                SaveServiceDetailsToFile();
+            }
+        }
+
+        #endregion
+
+        #region 資料清除方法
+
+        /// <summary>
+        /// 清除機油潤滑選項
+        /// </summary>
+        private void ClearOilLube()
+        {
+            chkOilChange.Checked = false;
+            chkLubeJob.Checked = false;
+        }
+
+        /// <summary>
+        /// 清除清洗服務選項
+        /// </summary>
+        private void ClearFlushes()
+        {
+            chkRadiatorFlush.Checked = false;
+            chkTransmissionFlush.Checked = false;
+        }
+
+        /// <summary>
+        /// 清除其他服務選項
+        /// </summary>
+        private void ClearMisc()
+        {
+            chkInspection.Checked = false;
+            chkMufflerReplacement.Checked = false;
+            chkTireRotation.Checked = false;
+        }
+
+        /// <summary>
+        /// 清除零件和工時輸入
+        /// </summary>
+        private void ClearOther()
+        {
+            txtParts.Clear();
+            txtLabor.Clear();
+        }
+
+        /// <summary>
+        /// 清除費用顯示
+        /// </summary>
+        private void ClearFees()
+        {
+            txtServiceLabor.Clear();
+            txtTaxOnParts.Clear();
+            txtTotalFees.Clear();
+        }
+
+        #endregion
+
+        #region 檔案處理方法
+
+        /// <summary>
+        /// 儲存維修明細到檔案
+        /// </summary>
+        private void SaveServiceDetailsToFile()
+        {
+            try
+            {
+                // 建立儲存檔案對話框
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "文字檔案 (*.txt)|*.txt|所有檔案 (*.*)|*.*";
+                saveDialog.Title = "儲存維修明細";
+                saveDialog.FileName = "維修明細_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // 使用 StreamWriter 寫入檔案，使用 UTF-8 編碼
+                    using (StreamWriter writer = new StreamWriter(saveDialog.FileName, false, Encoding.UTF8))
+                    {
+                        writer.WriteLine("========================================");
+                        writer.WriteLine("        汽車維修服務明細表");
+                        writer.WriteLine("========================================");
+                        writer.WriteLine("列印時間：" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss"));
+                        writer.WriteLine();
+
+                        // 機油與潤滑服務
+                        writer.WriteLine("【機油與潤滑服務】");
+                        if (chkOilChange.Checked)
+                            writer.WriteLine("  ✓ 更換機油：NT$" + OIL_CHANGE_PRICE.ToString("N0"));
+                        if (chkLubeJob.Checked)
+                            writer.WriteLine("  ✓ 潤滑保養：NT$" + LUBE_JOB_PRICE.ToString("N0"));
+                        if (!chkOilChange.Checked && !chkLubeJob.Checked)
+                            writer.WriteLine("  （未選擇）");
+                        writer.WriteLine("  小計：NT$" + OilLubeCharges().ToString("N0"));
+                        writer.WriteLine();
+
+                        // 清洗服務
+                        writer.WriteLine("【清洗服務】");
+                        if (chkRadiatorFlush.Checked)
+                            writer.WriteLine("  ✓ 水箱清洗：NT$" + RADIATOR_FLUSH_PRICE.ToString("N0"));
+                        if (chkTransmissionFlush.Checked)
+                            writer.WriteLine("  ✓ 變速箱清洗：NT$" + TRANSMISSION_FLUSH_PRICE.ToString("N0"));
+                        if (!chkRadiatorFlush.Checked && !chkTransmissionFlush.Checked)
+                            writer.WriteLine("  （未選擇）");
+                        writer.WriteLine("  小計：NT$" + FlushCharges().ToString("N0"));
+                        writer.WriteLine();
+
+                        // 其他服務
+                        writer.WriteLine("【其他服務】");
+                        if (chkInspection.Checked)
+                            writer.WriteLine("  ✓ 檢驗：NT$" + INSPECTION_PRICE.ToString("N0"));
+                        if (chkMufflerReplacement.Checked)
+                            writer.WriteLine("  ✓ 更換消音器：NT$" + MUFFLER_REPLACEMENT_PRICE.ToString("N0"));
+                        if (chkTireRotation.Checked)
+                            writer.WriteLine("  ✓ 輪胎換位：NT$" + TIRE_ROTATION_PRICE.ToString("N0"));
+                        if (!chkInspection.Checked && !chkMufflerReplacement.Checked && !chkTireRotation.Checked)
+                            writer.WriteLine("  （未選擇）");
+                        writer.WriteLine("  小計：NT$" + MiscCharges().ToString("N0"));
+                        writer.WriteLine();
+
+                        // 零件與工時
+                        writer.WriteLine("【零件與工時】");
+                        decimal parts = 0m;
+                        decimal.TryParse(txtParts.Text, out parts);
+                        writer.WriteLine("  零件費用：NT$" + parts.ToString("N0"));
+
+                        decimal laborHours = 0m;
+                        decimal.TryParse(txtLabor.Text, out laborHours);
+                        decimal laborCost = laborHours * LABOR_RATE_PER_HOUR;
+                        writer.WriteLine("  工時：" + laborHours.ToString("N1") + " 小時");
+                        writer.WriteLine("  工時費率：NT$" + LABOR_RATE_PER_HOUR.ToString("N0") + "/小時");
+                        writer.WriteLine("  工時費用：NT$" + laborCost.ToString("N0"));
+                        writer.WriteLine();
+
+                        // 費用總計
+                        writer.WriteLine("========================================");
+                        writer.WriteLine("【費用總計】");
+                        writer.WriteLine("----------------------------------------");
+                        
+                        decimal serviceCharges = OilLubeCharges() + FlushCharges() + MiscCharges();
+                        decimal serviceLaborTotal = serviceCharges + laborCost;
+                        writer.WriteLine("  服務與工資：NT$" + serviceLaborTotal.ToString("N0"));
+                        writer.WriteLine("  零件費用：NT$" + parts.ToString("N0"));
+                        
+                        decimal tax = TaxCharges();
+                        writer.WriteLine("  稅金 (6%)：NT$" + tax.ToString("N0"));
+                        writer.WriteLine("----------------------------------------");
+                        
+                        decimal total = TotalCharges();
+                        writer.WriteLine("  總費用：NT$" + total.ToString("N0"));
+                        writer.WriteLine("========================================");
+                        writer.WriteLine();
+                        writer.WriteLine("感謝您的光臨！");
+                    }
+
+                    MessageBox.Show("維修明細已成功儲存！", "成功", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("儲存檔案時發生錯誤：" + ex.Message, "錯誤", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+    }
+}

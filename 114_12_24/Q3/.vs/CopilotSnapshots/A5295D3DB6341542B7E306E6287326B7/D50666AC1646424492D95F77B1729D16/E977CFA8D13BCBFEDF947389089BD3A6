@@ -1,0 +1,328 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace Q3
+{
+    public partial class Form1 : Form
+    {
+        private Random random = new Random();
+        private int[] userNumbers = new int[5];  // 儲存使用者產生的號碼
+        private int[] drawNumbers = new int[5];  // 儲存開獎號碼
+        private bool hasDrawn = false; // 是否已開獎
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// 產生號碼按鈕事件
+        /// 使用基本迴圈和陣列產生5個不重複的1-49隨機號碼
+        /// </summary>
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            // 清空之前產生的號碼
+            ClearUserNumbers();
+            
+            // 產生5個不重複的隨機號碼
+            for (int i = 0; i < 5; i++)
+            {
+                int num;
+                bool isDuplicate;
+                
+                do
+                {
+                    isDuplicate = false;
+                    num = random.Next(1, 50); // 產生1-49的隨機數
+                    
+                    // 檢查是否重複
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (userNumbers[j] == num)
+                        {
+                            isDuplicate = true;
+                            break;
+                        }
+                    }
+                } while (isDuplicate);
+                
+                userNumbers[i] = num;
+            }
+            
+            // 排序號碼（使用氣泡排序）
+            for (int i = 0; i < userNumbers.Length - 1; i++)
+            {
+                for (int j = 0; j < userNumbers.Length - 1 - i; j++)
+                {
+                    if (userNumbers[j] > userNumbers[j + 1])
+                    {
+                        int temp = userNumbers[j];
+                        userNumbers[j] = userNumbers[j + 1];
+                        userNumbers[j + 1] = temp;
+                    }
+                }
+            }
+            
+            // 顯示號碼到Label陣列
+            DisplayUserNumbers();
+            
+            // 自動比對號碼並顯示結果
+            CompareNumbers();
+        }
+
+        /// <summary>
+        /// 開獎號碼按鈕事件
+        /// 自動讀取預設的 sample_numbers.txt 檔案
+        /// </summary>
+        private void btnDraw_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 取得應用程式執行目錄
+                string appPath = Application.StartupPath;
+                string filePath = System.IO.Path.Combine(appPath, "sample_numbers.txt");
+                
+                // 如果找不到在執行目錄，嘗試在專案目錄下尋找
+                if (!System.IO.File.Exists(filePath))
+                {
+                    // 嘗試在上層目錄尋找
+                    string parentPath = System.IO.Directory.GetParent(appPath).Parent.FullName;
+                    filePath = System.IO.Path.Combine(parentPath, "sample_numbers.txt");
+                }
+                
+                if (!System.IO.File.Exists(filePath))
+                {
+                    MessageBox.Show("找不到 sample_numbers.txt 檔案！", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
+                // 讀取檔案
+                if (ReadDrawNumbersFromFile(filePath))
+                {
+                    // 顯示開獎號碼到ListBox
+                    DisplayDrawNumbers();
+                    
+                    hasDrawn = true;
+                    btnDraw.Enabled = false; // 開獎後停用開獎按鈕
+                    btnGenerate.Enabled = true; // 啟用產生號碼按鈕
+                    
+                    MessageBox.Show("開獎完成！請按「產生號碼」來產生您的號碼並進行比對。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"讀取檔案時發生錯誤：{ex.Message}", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// 離開按鈕事件
+        /// </summary>
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            // 確認是否離開
+            DialogResult result = MessageBox.Show("確定要離開程式嗎？", "確認離開", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        /// <summary>
+        /// 從檔案讀取開獎號碼
+        /// 使用StreamReader逐行讀取，並進行完整的錯誤處理
+        /// </summary>
+        private bool ReadDrawNumbersFromFile(string filePath)
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader(filePath, Encoding.UTF8))
+                {
+                    int lineCount = 0;
+                    
+                    // 逐行讀取
+                    for (int i = 0; i < 5; i++)
+                    {
+                        string line = sr.ReadLine();
+                        
+                        if (line == null)
+                        {
+                            MessageBox.Show($"檔案格式錯誤：需要5行數字，但只有{lineCount}行", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                        
+                        lineCount++;
+                        line = line.Trim();
+                        
+                        // 轉換為整數
+                        int num;
+                        if (!int.TryParse(line, out num))
+                        {
+                            MessageBox.Show($"檔案格式錯誤：第{lineCount}行不是有效的數字", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                        
+                        // 檢查數字範圍
+                        if (num < 1 || num > 49)
+                        {
+                            MessageBox.Show($"檔案格式錯誤：第{lineCount}行的數字{num}超出範圍（1-49）", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                        
+                        // 檢查是否重複
+                        for (int j = 0; j < i; j++)
+                        {
+                            if (drawNumbers[j] == num)
+                            {
+                                MessageBox.Show($"檔案格式錯誤：數字{num}重複出現", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return false;
+                            }
+                        }
+                        
+                        drawNumbers[i] = num;
+                    }
+                    
+                    return true;
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("找不到指定的檔案", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show($"讀取檔案時發生錯誤：{ex.Message}", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 比對使用者號碼與開獎號碼
+        /// 計算中獎數量並判定獎項等級
+        /// </summary>
+        private void CompareNumbers()
+        {
+            int matchCount = 0;
+            
+            // 使用基本迴圈進行比對
+            for (int i = 0; i < userNumbers.Length; i++)
+            {
+                for (int j = 0; j < drawNumbers.Length; j++)
+                {
+                    if (userNumbers[i] == drawNumbers[j])
+                    {
+                        matchCount++;
+                        break;
+                    }
+                }
+            }
+            
+            // 判定獎項
+            string prize = DeterminePrize(matchCount);
+            
+            // 顯示比對結果
+            string message = $"比對結果：\n\n";
+            message += $"您的號碼：{GetNumbersString(userNumbers)}\n";
+            message += $"開獎號碼：{GetNumbersString(drawNumbers)}\n\n";
+            message += $"中獎數量：{matchCount} 個\n";
+            message += $"獎項等級：{prize}";
+            
+            MessageBox.Show(message, "中獎結果", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// 根據中獎數量判定獎項等級
+        /// </summary>
+        private string DeterminePrize(int matchCount)
+        {
+            if (matchCount == 5)
+            {
+                return "頭獎！恭喜中獎！";
+            }
+            else if (matchCount == 4)
+            {
+                return "貳獎！恭喜中獎！";
+            }
+            else if (matchCount == 3)
+            {
+                return "參獎！恭喜中獎！";
+            }
+            else if (matchCount == 2)
+            {
+                return "肆獎！恭喜中獎！";
+            }
+            else if (matchCount == 1)
+            {
+                return "伍獎！恭喜中獎！";
+            }
+            else
+            {
+                return "未中獎，請再接再厲！";
+            }
+        }
+
+        /// <summary>
+        /// 顯示使用者產生的號碼到Label陣列
+        /// </summary>
+        private void DisplayUserNumbers()
+        {
+            lblNumber1.Text = userNumbers[0].ToString();
+            lblNumber2.Text = userNumbers[1].ToString();
+            lblNumber3.Text = userNumbers[2].ToString();
+            lblNumber4.Text = userNumbers[3].ToString();
+            lblNumber5.Text = userNumbers[4].ToString();
+        }
+
+        /// <summary>
+        /// 顯示開獎號碼到ListBox
+        /// </summary>
+        private void DisplayDrawNumbers()
+        {
+            listBoxDrawNumbers.Items.Clear();
+            listBoxDrawNumbers.Items.Add("本期開獎號碼：");
+            
+            for (int i = 0; i < drawNumbers.Length; i++)
+            {
+                listBoxDrawNumbers.Items.Add($"第{i + 1}個號碼: {drawNumbers[i]}");
+            }
+        }
+
+        /// <summary>
+        /// 清空使用者號碼
+        /// </summary>
+        private void ClearUserNumbers()
+        {
+            lblNumber1.Text = "";
+            lblNumber2.Text = "";
+            lblNumber3.Text = "";
+            lblNumber4.Text = "";
+            lblNumber5.Text = "";
+        }
+
+        /// <summary>
+        /// 將號碼陣列轉換為字串格式
+        /// </summary>
+        private string GetNumbersString(int[] numbers)
+        {
+            string result = "";
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                result += numbers[i].ToString();
+                if (i < numbers.Length - 1)
+                {
+                    result += ", ";
+                }
+            }
+            return result;
+        }
+    }
+}

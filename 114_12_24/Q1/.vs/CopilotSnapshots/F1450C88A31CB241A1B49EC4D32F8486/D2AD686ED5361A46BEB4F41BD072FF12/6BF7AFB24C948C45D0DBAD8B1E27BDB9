@@ -1,0 +1,293 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Q1
+{
+    public partial class Form1 : Form
+    {
+        // 遊戲變數
+        private int computerWins = 0;  // 電腦勝場數
+        private int playerWins = 0;    // 玩家勝場數
+        private string computerChoice; // 電腦的選擇
+        private string playerChoice;   // 玩家的選擇
+        private Random random = new Random(); // 隨機數產生器
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// 表單載入事件，初始化遊戲
+        /// </summary>
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // 清空圖片和結果顯示
+            computerPictureBox.Image = null;
+            playerPictureBox.Image = null;
+            resultLabel.Text = "";
+        }
+
+        /// <summary>
+        /// 產生電腦的隨機選擇（石頭/布/剪刀）
+        /// </summary>
+        private void getCompChoice()
+        {
+            int choice = random.Next(1, 4); // 產生 1-3 的隨機數
+            
+            switch (choice)
+            {
+                case 1:
+                    computerChoice = "石頭";
+                    break;
+                case 2:
+                    computerChoice = "布";
+                    break;
+                case 3:
+                    computerChoice = "剪刀";
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 根據電腦的選擇顯示對應的圖片
+        /// </summary>
+        private void showComputerImage()
+        {
+            computerPictureBox.Image = DrawHandGesture(computerChoice, computerPictureBox.Width, computerPictureBox.Height);
+        }
+
+        /// <summary>
+        /// 根據玩家的選擇顯示對應的圖片
+        /// </summary>
+        private void showPlayerImage()
+        {
+            playerPictureBox.Image = DrawHandGesture(playerChoice, playerPictureBox.Width, playerPictureBox.Height);
+        }
+
+        /// <summary>
+        /// 繪製手勢圖示（石頭/布/剪刀）
+        /// </summary>
+        private Bitmap DrawHandGesture(string gesture, int width, int height)
+        {
+            Bitmap bmp = new Bitmap(width, height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                g.Clear(Color.Tan);
+
+                // 繪製邊框
+                using (Pen borderPen = new Pen(Color.SaddleBrown, 2))
+                {
+                    g.DrawRectangle(borderPen, 1, 1, width - 2, height - 2);
+                }
+
+                switch (gesture)
+                {
+                    case "石頭":
+                        DrawRock(g, width, height);
+                        break;
+                    case "布":
+                        DrawPaper(g, width, height);
+                        break;
+                    case "剪刀":
+                        DrawScissors(g, width, height);
+                        break;
+                }
+            }
+            return bmp;
+        }
+
+        /// <summary>
+        /// 繪製石頭（拳頭）
+        /// </summary>
+        private void DrawRock(Graphics g, int width, int height)
+        {
+            int centerX = width / 2;
+            int centerY = height / 2;
+            
+            // 繪製拳頭（實心圓）
+            using (SolidBrush brush = new SolidBrush(Color.PeachPuff))
+            {
+                g.FillEllipse(brush, centerX - 25, centerY - 20, 50, 40);
+            }
+            
+            // 繪製拳頭輪廓
+            using (Pen pen = new Pen(Color.Black, 2))
+            {
+                g.DrawEllipse(pen, centerX - 25, centerY - 20, 50, 40);
+                
+                // 繪製手指關節線條
+                for (int i = -15; i <= 15; i += 10)
+                {
+                    g.DrawLine(pen, centerX + i - 5, centerY - 15, centerX + i + 5, centerY - 15);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 繪製布（張開的手掌）
+        /// </summary>
+        private void DrawPaper(Graphics g, int width, int height)
+        {
+            int centerX = width / 2;
+            int centerY = height / 2 + 5;
+            
+            // 繪製手掌
+            using (SolidBrush brush = new SolidBrush(Color.PeachPuff))
+            {
+                g.FillRectangle(brush, centerX - 15, centerY - 5, 30, 25);
+            }
+            
+            // 繪製五根手指
+            int fingerWidth = 8;
+            int[] fingerHeights = { 25, 30, 28, 25, 20 };
+            int startX = centerX - 20;
+            
+            using (SolidBrush brush = new SolidBrush(Color.PeachPuff))
+            using (Pen pen = new Pen(Color.Black, 2))
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    int x = startX + (i * 10);
+                    int y = centerY - fingerHeights[i];
+                    
+                    g.FillRectangle(brush, x, y, fingerWidth, fingerHeights[i]);
+                    g.DrawRectangle(pen, x, y, fingerWidth, fingerHeights[i]);
+                }
+                
+                // 繪製手掌輪廓
+                g.DrawRectangle(pen, centerX - 15, centerY - 5, 30, 25);
+            }
+        }
+
+        /// <summary>
+        /// 繪製剪刀（兩根手指伸出）
+        /// </summary>
+        private void DrawScissors(Graphics g, int width, int height)
+        {
+            int centerX = width / 2;
+            int centerY = height / 2 + 5;
+            
+            // 繪製手掌（較小）
+            using (SolidBrush brush = new SolidBrush(Color.PeachPuff))
+            {
+                g.FillRectangle(brush, centerX - 10, centerY, 20, 20);
+            }
+            
+            using (SolidBrush brush = new SolidBrush(Color.PeachPuff))
+            using (Pen pen = new Pen(Color.Black, 2))
+            {
+                // 繪製食指（V字的左邊）
+                Point[] finger1 = {
+                    new Point(centerX - 8, centerY),
+                    new Point(centerX - 15, centerY - 25),
+                    new Point(centerX - 8, centerY - 20),
+                    new Point(centerX - 3, centerY)
+                };
+                g.FillPolygon(brush, finger1);
+                g.DrawPolygon(pen, finger1);
+                
+                // 繪製中指（V字的右邊）
+                Point[] finger2 = {
+                    new Point(centerX + 3, centerY),
+                    new Point(centerX + 8, centerY - 20),
+                    new Point(centerX + 15, centerY - 25),
+                    new Point(centerX + 8, centerY)
+                };
+                g.FillPolygon(brush, finger2);
+                g.DrawPolygon(pen, finger2);
+                
+                // 繪製手掌輪廓
+                g.DrawRectangle(pen, centerX - 10, centerY, 20, 20);
+            }
+        }
+
+        /// <summary>
+        /// 判斷輸贏並更新計分
+        /// </summary>
+        private void showWinner()
+        {
+            string result = "";
+
+            // 判斷輸贏
+            if (playerChoice == computerChoice)
+            {
+                result = "平手";
+            }
+            else if ((playerChoice == "石頭" && computerChoice == "剪刀") ||
+                     (playerChoice == "布" && computerChoice == "石頭") ||
+                     (playerChoice == "剪刀" && computerChoice == "布"))
+            {
+                result = "玩家贏";
+                playerWins++;
+            }
+            else
+            {
+                result = "電腦贏";
+                computerWins++;
+            }
+
+            // 顯示結果
+            resultLabel.Text = result;
+        }
+
+        /// <summary>
+        /// 玩家選擇石頭
+        /// </summary>
+        private void stoneButton_Click(object sender, EventArgs e)
+        {
+            playerChoice = "石頭";
+            playRound();
+        }
+
+        /// <summary>
+        /// 玩家選擇布
+        /// </summary>
+        private void paperButton_Click(object sender, EventArgs e)
+        {
+            playerChoice = "布";
+            playRound();
+        }
+
+        /// <summary>
+        /// 玩家選擇剪刀
+        /// </summary>
+        private void scissorButton_Click(object sender, EventArgs e)
+        {
+            playerChoice = "剪刀";
+            playRound();
+        }
+
+        /// <summary>
+        /// 執行一回合遊戲
+        /// </summary>
+        private void playRound()
+        {
+            getCompChoice();        // 電腦隨機選擇
+            showComputerImage();    // 顯示電腦圖片
+            showPlayerImage();      // 顯示玩家圖片
+            showWinner();           // 判斷輸贏並顯示結果
+        }
+
+        /// <summary>
+        /// 結束遊戲，顯示統計資訊
+        /// </summary>
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 顯示統計資訊
+            string message = string.Format("遊戲結束！\n\n玩家贏了 {0} 次\n電腦贏了 {1} 次", playerWins, computerWins);
+            MessageBox.Show(message, "遊戲統計", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            // 關閉程式
+            this.Close();
+        }
+    }
+}
